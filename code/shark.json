@@ -1,0 +1,55 @@
+{
+  "data_path":"../Data/Cifar_10/cifar-10-batches-py",
+  "train_path":"../Data/SVHN/train_32x32.mat",
+  "test_path":"../Data/SVHN/test_32x32.mat",
+  "is_cifar_data":0,
+  "image_size":32,
+  "image_channel":3,
+  "class_num":100,
+  "num_residual_blocks":3,
+  "num_filter_base":16,
+  "partial_scope":"conv12",
+  "begin_acc":0.64,
+  "max_to_keep":1,
+  "batch_size":250,
+  "iterations":200,
+  "start":1,
+  "decay_rate":0.1,
+  "decay_steps":50,
+  "total":120,
+  "base_lr":0.00001,
+  "max_lr":0.1,
+  "stepsize":11440,
+  "learning_rates": {
+    "phase":[50,80,100,120,150],
+    "value":[0.1,0.01,0.001,0.0001,0.00001],
+    "use_flag":[1,1,1,1,1]
+  },
+  "lock_epoch":{
+    "start":[80,90,100,110,140,150,160,170,180,190,200],
+    "end":[85,95,105,115,145,155,165,175,185,195,205]
+  },
+  "partial_retain_total":30,
+   "partial_retrain_learning_rates": {
+    "phase":[30],
+    "value":[0.01],
+    "use_flag":[1]
+  },
+  "vgg_channel":[64,64,128,128,256,256,256,512,512,512,512,512,512,2048,1024],
+  "Lenet_channel":[16,16,32,32,64,120],
+  "retrain_total":220,
+  "retrain_learning_rates": {
+    "phase":[80,120,160,190,220],
+    "value":[0.1,0.01,0.001,0.0001,0.00001],
+    "use_flag":[1,1,1,1,1]
+  },
+  "L1para":0.0003,
+  "L2para":0.003,
+  "crossgroup_para":0.005,
+  "grouplasso_para1":0.003,
+  "grouplasso_para2":0.003,
+  "threshold":0.001,
+  "momentum":0.9,
+  "norm_clip":5,
+  "reverse":0.003
+}
